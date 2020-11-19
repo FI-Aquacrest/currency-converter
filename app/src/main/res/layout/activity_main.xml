@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/currencyInputSelector"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:hint="From"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/currencyPickerArrow" >
+
+        <AutoCompleteTextView
+            android:id="@+id/filled_input_dropdown"
+            android:inputType="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/currencyPickerArrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintTop_toTopOf="@id/currencyInputSelector"
+        app:layout_constraintBottom_toBottomOf="@id/currencyInputSelector"
+        app:layout_constraintLeft_toRightOf="@id/currencyInputSelector"
+        app:layout_constraintRight_toLeftOf="@id/currencyOutputSelector"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/currencyOutputSelector"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:hint="To"
+        app:layout_constraintTop_toTopOf="@id/currencyInputSelector"
+        app:layout_constraintBottom_toBottomOf="@+id/currencyInputSelector"
+        app:layout_constraintLeft_toRightOf="@id/currencyPickerArrow"
+        app:layout_constraintRight_toRightOf="parent" >
+
+        <AutoCompleteTextView
+            android:id="@+id/filled_output_dropdown"
+            android:inputType="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/currencyInputField"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:hint="Amount"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_baseline_attach_money_24"
+        app:layout_constraintTop_toBottomOf="@id/currencyInputSelector"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/amountPickerArrow">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/amountPickerArrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintTop_toTopOf="@id/currencyInputField"
+        app:layout_constraintBottom_toBottomOf="@id/currencyInputField"
+        app:layout_constraintLeft_toRightOf="@id/currencyInputField"
+        app:layout_constraintRight_toLeftOf="@id/currencyOutputField"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/currencyOutputField"
+        android:enabled="false"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_baseline_attach_money_24"
+        app:layout_constraintTop_toTopOf="@id/currencyInputField"
+        app:layout_constraintBottom_toBottomOf="@id/currencyInputField"
+        app:layout_constraintLeft_toRightOf="@id/amountPickerArrow"
+        app:layout_constraintRight_toRightOf="parent" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Convert"
+        app:layout_constraintTop_toBottomOf="@id/currencyOutputField"
+        app:layout_constraintLeft_toLeftOf="@id/currencyInputField"
+        app:layout_constraintRight_toRightOf="@id/currencyOutputField" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

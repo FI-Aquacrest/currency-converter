@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Currency Converter</string>
+    <string name="curr_eur_name">Euro</string>
+    <string name="curr_usd_name">US dollar</string>
+    <string name="curr_jpy_name">Japanese yen</string>
+    <string name="curr_gbp_name">Pound sterling</string>
+    <string name="curr_aud_name">Australian dollar</string>
+    <string name="curr_cad_name">Canadian dollar</string>
+    <string name="curr_cnh_name">Chinese renminbi</string>
+    <string name="curr_nzd_name">New Zealand dollar</string>
+</resources>

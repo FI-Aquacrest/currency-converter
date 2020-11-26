@@ -13,6 +13,8 @@ public class Currency {
     private String name;
     private int signId;
 
+    private ConversionRates conversionRates;
+
     public Currency(String abbreviation, String name, int signId) {
         this.abbreviation = abbreviation;
         this.name = name;
